@@ -52,13 +52,19 @@ More tools coming soon.</p>
        
 <h3 id="usage">Usage:</h3>
 <ol>
-  <li>Install the <a href="https://raw.githubusercontent.com/rivermeow/covid-vaccine-tools/main/bookmarklets/riteaid-status.js">bookmarklet</a> in your browser by dragging this link: <a href="javascript:(function()%7Bvar%20CHECK_SLOTS_URL%3D%22https%3A%2F%2Fwww.riteaid.com%2Fservices%2Fext%2Fv2%2Fvaccine%2FcheckSlots%22%3B%0A%24('.appt-check-status').remove()%3B%0A%0A%24('.covid-store__store').each(function()%7B%0A%09var%20desc%20%3D%20%24(this).find('.copy-body').text()%3B%0A%09var%20num%20%3D%20desc.substring(desc.indexOf('%23')%2B1%2Cdesc.indexOf('%20('))%3B%0A%09var%20self%20%3D%20this%3B%0A%09var%20store%20%3D%20%24(this).find('.covid-store__store__icon')%3B%0A%09%24.get(%20CHECK_SLOTS_URL%2C%20%7B%20storeNumber%3A%20num%7D%2C%20function(%20data%20)%20%7B%0A%09%20%20%0A%09%20%20if(data.Data.slots%5B1%5D%20%3D%3D%20true)%7B%0A%09%09console.log('store%20'%20%2B%20num%20%2B%20'%20may%20have%20appointments')%3B%0A%09%09store.append('%3Cspan%20title%3D%22Appointsment%20may%20be%20available%22%20class%3D%22appt-check-status%22%3E%3Cbr%2F%3E%3Ci%20class%3D%22fas%20fa-check-circle%20fa-2x%22%20style%3D%22color%3Agreen%3B%22%3E%3C%2Fi%3E%3C%2Fspan%3E')%3B%0A%09%20%20%7D%20else%20%7B%0A%09%09store.append('%3Cspan%20title%3D%22No%20appointments%20are%20available%22%20class%3D%22appt-check-status%22%3E%3Cbr%2F%3E%3Ci%20class%3D%22fas%20fa-times-circle%20fa-2x%22%3E%3C%2Fi%3E%3C%2Fspan%3E')%3B%0A%09%20%20%7D%0A%09%7D)%3B%0A%09%09%0A%7D)%3B%7D)()%3B">Rite Aid Status Check</a> to your bookmarket bar.</li>
+  <li>On a desktop browser, install the <a href="https://raw.githubusercontent.com/rivermeow/covid-vaccine-tools/main/bookmarklets/riteaid-status.js">bookmarklet</a> in your browser by dragging this link: <a href="javascript:(function()%7Bvar%20CHECK_SLOTS_URL%3D%22https%3A%2F%2Fwww.riteaid.com%2Fservices%2Fext%2Fv2%2Fvaccine%2FcheckSlots%22%3B%0A%24('.appt-check-status').remove()%3B%0A%0A%24('.covid-store__store').each(function()%7B%0A%09var%20desc%20%3D%20%24(this).find('.copy-body').text()%3B%0A%09var%20num%20%3D%20desc.substring(desc.indexOf('%23')%2B1%2Cdesc.indexOf('%20('))%3B%0A%09var%20self%20%3D%20this%3B%0A%09var%20store%20%3D%20%24(this).find('.covid-store__store__icon')%3B%0A%09%24.get(%20CHECK_SLOTS_URL%2C%20%7B%20storeNumber%3A%20num%7D%2C%20function(%20data%20)%20%7B%0A%09%20%20%0A%09%20%20if(data.Data.slots%5B1%5D%20%3D%3D%20true)%7B%0A%09%09console.log('store%20'%20%2B%20num%20%2B%20'%20may%20have%20appointments')%3B%0A%09%09store.append('%3Cspan%20title%3D%22Appointsment%20may%20be%20available%22%20class%3D%22appt-check-status%22%3E%3Cbr%2F%3E%3Ci%20class%3D%22fas%20fa-check-circle%20fa-2x%22%20style%3D%22color%3Agreen%3B%22%3E%3C%2Fi%3E%3C%2Fspan%3E')%3B%0A%09%20%20%7D%20else%20%7B%0A%09%09store.append('%3Cspan%20title%3D%22No%20appointments%20are%20available%22%20class%3D%22appt-check-status%22%3E%3Cbr%2F%3E%3Ci%20class%3D%22fas%20fa-times-circle%20fa-2x%22%3E%3C%2Fi%3E%3C%2Fspan%3E')%3B%0A%09%20%20%7D%0A%09%7D)%3B%0A%09%09%0A%7D)%3B%7D)()%3B">Rite Aid Status Check</a> to your bookmarket bar.</li>
+    <li>See below for mobile browser instructions</li>
   <li>Go to the <a href="https://www.riteaid.com/pharmacy/covid-qualifier">Rite Aid Covid Qualifier</a> and complete the form</li>
   <li>On the results page, click the bookmarklet to see the status next to each store</li>
   <li>Choose a store with availability and schedule your appointment.</li>
 </ol>
 
 <p><strong>Note that availability is not always correct and stores that indicate availability may not actually have availability</strong></p>
+
+<h3 id="rite-aid-status-bookmarklet">Instructions for mobile browsers</h3>
+          <p><a href="https://android.stackexchange.com/a/210701">Mobile Chrome</a></p>
+          <p><a href="https://www.cultofmac.com/500532/how-to-add-bookmarklet-mobile-iphone-safari/">Safari iOS</a></p>
+  
 
 
       </section>
