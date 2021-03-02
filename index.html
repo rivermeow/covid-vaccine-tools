@@ -1,0 +1,76 @@
+<html lang="en-US" data-arp-injected="true"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>covid-vaccine-tools | Tools to assist in finding and booking vaccine appointments</title>
+<meta name="generator" content="Jekyll v3.9.0">
+<meta property="og:title" content="covid-vaccine-tools">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Tools to assist in finding and booking vaccine appointments">
+<meta property="og:description" content="Tools to assist in finding and booking vaccine appointments">
+<link rel="canonical" href="https://rivermeow.github.io/covid-vaccine-tools/">
+<meta property="og:url" content="https://rivermeow.github.io/covid-vaccine-tools/">
+<meta property="og:site_name" content="covid-vaccine-tools">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="covid-vaccine-tools">
+<script type="application/ld+json">
+{"description":"Tools to assist in finding and booking vaccine appointments","@type":"WebSite","headline":"covid-vaccine-tools","url":"https://rivermeow.github.io/covid-vaccine-tools/","name":"covid-vaccine-tools","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/covid-vaccine-tools/assets/css/style.css?v=e923073cfbd50f7221c9917c1e05e8aae0570929">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+  <style type="text/css">.fc-ab-root { display: none !important } body > div.fc-ab-root { display: none !important } .fbs-auth__container.fbs-auth__adblock { display: none !important } .overlay-34_Kj { display: none !important } .wrapper-3AzfF { display: none !important } .fEy1Z2XT { display: none !important } .nytc---modal-window---windowContainer.nytc---modal-window---isShown.nytc---shared---blackBG { display: none !important } .tp-modal { display: none !important } .tp-backdrop.tp-active { display: none !important } .c-nudge__container.c-gate__container { display: none !important } .c-nudge__container.c-regGate__container { display: none !important } .css-n7r8pg { display: none !important } .css-1bd8bfl { display: none !important } .overlay__59af11e2 { display: none !important } .tp_modal { display: none !important } .tp-backdrop.tp-active { display: none !important } div[class^='sp_message_container'] { display: none !important } div[class^='sp_veil'] { display: none !important } </style></head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="https://rivermeow.github.io/covid-vaccine-tools/">covid-vaccine-tools</a></h1>
+        
+        
+
+        <p>Tools to assist in finding and booking vaccine appointments</p>
+
+        
+        <p class="view"><a href="https://github.com/rivermeow/covid-vaccine-tools">View the Project on GitHub <small>rivermeow/covid-vaccine-tools</small></a></p>
+        
+
+        
+
+        
+      </header>
+      <section>
+
+      <h1 id="covid-vaccine-tools">covid-vaccine-tools</h1>
+<p>Tools to assist in finding and booking vaccine appointments.
+More tools coming soon.</p>
+
+<h2 id="rite-aid-status-bookmarklet">Rite Aid status bookmarklet</h2>
+<p>Adds a green checkbox or red X next to each store indicating whether the store MAY have vaccines or if none are available.</p>
+        <a href="javascript%3Avar%20CHECK_SLOTS_URL%3D%22https%3A%2F%2Fwww.riteaid.com%2Fservices%2Fext%2Fv2%2Fvaccine%2FcheckSlots%22%3B%24%28%27.appt-check-status%27%29.remove%28%29%3B%24%28%27.covid-store__store%27%29.each%28function%28%29%7B%09var%20desc%20%3D%20%24%28this%29.find%28%27.copy-body%27%29.text%28%29%3B%09var%20num%20%3D%20desc.substring%28desc.indexOf%28%27%23%27%29%2B1%2Cdesc.indexOf%28%27%20%28%27%29%29%3B%09var%20self%20%3D%20this%3B%09var%20store%20%3D%20%24%28this%29.find%28%27.covid-store__store__icon%27%29%3B%09%24.get%28%20CHECK_SLOTS_URL%2C%20%7B%20storeNumber%3A%20num%7D%2C%20function%28%20data%20%29%20%7B%09%20%20%09%20%20if%28data.Data.slots%5B1%5D%20%3D%3D%20true%29%7B%09%09console.log%28%27store%20%27%20%2B%20num%20%2B%20%27%20may%20have%20appointments%27%29%3B%09%09store.append%28%27%3Cspan%20title%3D%22Appointsment%20may%20be%20available%22%20class%3D%22appt-check-status%22%3E%3Cbr%2F%3E%3Ci%20class%3D%22fas%20fa-check-circle%20fa-2x%22%20style%3D%22color%3Agreen%3B%22%3E%3C%2Fi%3E%3C%2Fspan%3E%27%29%3B%09%20%20%7D%20else%20%7B%09%09store.append%28%27%3Cspan%20title%3D%22No%20appointments%20are%20available%22%20class%3D%22appt-check-status%22%3E%3Cbr%2F%3E%3Ci%20class%3D%22fas%20fa-times-circle%20fa-2x%22%3E%3C%2Fi%3E%3C%2Fspan%3E%27%29%3B%09%20%20%7D%09%7D%29%3B%09%09%7D%29%3B">LINK</a>
+<h3 id="usage">Usage:</h3>
+<ol>
+  <li>Install the <a href="https://raw.githubusercontent.com/rivermeow/covid-vaccine-tools/main/bookmarklets/riteaid-status.js">bookmarklet</a> in your browser</li>
+  <li>Go to the <a href="https://www.riteaid.com/pharmacy/covid-qualifier">Rite Aid Covid Qualifier</a> and complete the form</li>
+  <li>On the results page, click the bookmarklet to see the status next to each store</li>
+  <li>Choose a store with availability and schedule your appointment.</li>
+</ol>
+
+<p><strong>Note that availability is not always correct and stores that indicate availability may not actually have availability</strong></p>
+
+
+      </section>
+      <footer>
+        
+        <p>This project is maintained by <a href="https://github.com/rivermeow">rivermeow</a></p>
+        
+        <p><small>Hosted on GitHub Pages — Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/covid-vaccine-tools/assets/js/scale.fix.js"></script>
+    
+  
+
+</body></html>
