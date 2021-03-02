@@ -6,7 +6,7 @@ More tools coming soon.
 Adds a green checkbox or red X next to each store indicating whether the store MAY have vaccines or if none are available.
 
 ### Usage:
-1. Install the [bookmarklet](https://github.com/rivermeow/covid-vaccine-tools/blob/main/bookmarklets/riteaid-status.js) in your browser
+1. Install the [bookmarklet](https://raw.githubusercontent.com/rivermeow/covid-vaccine-tools/main/bookmarklets/riteaid-status.js) in your browser
 2. Go to the [Rite Aid Covid Qualifier](https://www.riteaid.com/pharmacy/covid-qualifier) and complete the form
 3. On the results page, click the bookmarklet to see the status next to each store
 4. Choose a store with availability and schedule your appointment.
