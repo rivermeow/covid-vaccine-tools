@@ -46,7 +46,18 @@
       <h1 id="covid-vaccine-tools">covid-vaccine-tools</h1>
 <p>Tools to assist in finding and booking vaccine appointments.
 More tools coming soon.</p>
-
+          
+<h2 id="rite-aid-status-bookmarklet">Rite Aid form filler</h2>
+<p>Fills the form with your data and navigates to the store list page</p>
+       
+<h3 id="usage">Usage:</h3>
+<ol>
+  <li>Edit the <a href="https://raw.githubusercontent.com/rivermeow/covid-vaccine-tools/main/bookmarklets/riteaid-qualifier-fill.js">bookmarklet</a> with your values as needed, create a new bookmark, and copy your version to the address field</li>
+    <li>See below for mobile browser instructions</li>
+  <li>Go to the <a href="https://www.riteaid.com/pharmacy/covid-qualifier">Rite Aid Covid Qualifier</a> and click the bookmarklet</li>
+  <li>Your browser will complete the form and navigate to the store selection page.</li>
+</ol>
+          
 <h2 id="rite-aid-status-bookmarklet">Rite Aid status bookmarklet</h2>
 <p>Adds a green checkbox or red X next to each store indicating whether the store MAY have vaccines or if none are available and a slot count per day.
           <br/><br/><b>Update as of 3/16</b> Now the number of slots available and slot count per day will show for each store with availability. If you previously added the bookmarklet to your browser, please add it again using the instructions below.</p>
@@ -55,7 +66,7 @@ More tools coming soon.</p>
 <ol>
   <li>On a desktop browser, install the <a href="https://raw.githubusercontent.com/rivermeow/covid-vaccine-tools/main/bookmarklets/riteaid-status.js">bookmarklet</a> in your browser by dragging this link: <a href="javascript:(function()%7Bjavascript%3Avar%20CHECK_SLOTS_URL%3D%22https%3A%2F%2Fwww.riteaid.com%2Fservices%2Fext%2Fv2%2Fvaccine%2FcheckSlots%22%3Bvar%20GET_SLOTS_URL%3D'https%3A%2F%2Fwww.riteaid.com%2Fcontent%2Friteaid-web%2Fen.ragetavailableappointmentslots.json'%3Bvar%20sitekey%20%3D%20%24('div%5Bdata-template-id%3D%22covidScheduler%22%5D').attr('data-public-site-key')%3B%24('.appt-check-status').remove()%3B%24('.slots-found').remove()%3B%24('.covid-store__store').each(function()%7Bvar%20desc%20%3D%20%24(this).find('.copy-body').text()%3Bvar%20num%20%3D%20desc.substring(desc.indexOf('%23')%2B1%2Cdesc.indexOf('%20('))%3Bvar%20self%20%3D%20this%3Bvar%20store%20%3D%20this%3B%24.get(%20CHECK_SLOTS_URL%2C%20%7B%20storeNumber%3A%20num%7D%2C%20function(%20data%20)%20%7B%20%20%20%20if(data.Data.slots%5B1%5D%20%3D%3D%20true)%7BcheckForSlotTimes(num%2C%20store)%3B%20%20%7D%20else%20%7BgetStoreIcon(store).append('%3Cspan%20title%3D%22No%20appointments%20are%20available%22%20class%3D%22appt-check-status%22%3E%3Cbr%2F%3E%3Ci%20class%3D%22fas%20fa-times-circle%20fa-2x%22%3E%3C%2Fi%3E%3C%2Fspan%3E')%3B%20%20%7D%7D)%3B%7D)%3Bfunction%20checkForSlotTimes(num%2C%20store%20)%7Bgrecaptcha.execute(sitekey%2C%20%7Baction%3A%20'submit'%7D).then(function(mytoken)%20%7Bconsole.log(mytoken)%3B%24.get(%20GET_SLOTS_URL%2C%20%7B%20storeNumber%3A%20num%2C%20captchatoken%3A%20mytoken%2C%20moment%3Anew%20Date().getTime()%7D%2C%20function(%20data%20)%20%7B%20%20if(data.Data.slots%5B1%5D.length%20%3E%200%20%3D%3D%20true)%7Bconsole.log('store%20'%20%2B%20num%20%2B%20'%20may%20have%20appointments%3A%20'%20%2B%20data.Data.slots%5B1%5D)%3BgetStoreIcon(store).append('%3Cspan%20title%3D%22Appointsment%20may%20be%20available%22%20class%3D%22appt-check-status%22%3E%3Cbr%2F%3E%3Ci%20class%3D%22fas%20fa-check-circle%20fa-2x%22%20style%3D%22color%3Agreen%3B%22%3E%3C%2Fi%3E%3C%2Fspan%3E')%3B%24(store).find('.covid-store__store__btn').append('%3Cspan%20title%3D%22'%2BgetDayBreakdown(data.Data.slots%5B1%5D)%2B'%22class%3D%22slots-found%20link%20color-black%22%3E'%2Bdata.Data.slots%5B1%5D.length%2B'%20slots%20found%3A%20'%20%2B%20getDayBreakdown(data.Data.slots%5B1%5D)%20%2B%20'%3C%2Fspan%3E')%3B%20%20%7D%20else%20%7BgetStoreIcon(store).append('%3Cspan%20title%3D%22No%20appointments%20are%20available%22%20class%3D%22appt-check-status%22%3E%3Cbr%2F%3E%3Ci%20class%3D%22fas%20fa-times-circle%20fa-2x%22%3E%3C%2Fi%3E%3C%2Fspan%3E')%3B%20%20%7D%7D)%3B%20%20%20%7D)%3B%7Dfunction%20getDayBreakdown(slots)%20%7Bvar%20counts%20%3D%20%7B%7D%3Bslots.forEach(function(item)%7Bvar%20day%20%3D%20item.substring(0%2Citem.indexOf('T'))%3Bcounts%5Bday%5D%20%3D%20counts%5Bday%5D%20%3F%20counts%5Bday%5D%20%2B%201%20%3A%201%3B%7D)%3Bvar%20countList%20%3D%20''%3BObject.entries(counts).forEach(function(v%2Ck)%7BcountList%20%2B%3D%20'%3Cbr%2F%3E'%20%2B%20v%5B0%5D%20%2B%20'%20-%20'%20%2B%20v%5B1%5D%3B%7D)%3B%20%20%20%20%20%20%20%20countList%20%3D%20'%3Cspan%3E'%20%2B%20countList%20%2B%20'%3C%2Fspan%3E'%3Breturn%20countList%3B%7Dfunction%20getStoreIcon(store)%20%7Breturn%20%24(store).find('.covid-store__store__icon')%3B%7D%7D)()">Rite Aid Status Check</a> to your bookmarket bar.</li>
     <li>See below for mobile browser instructions</li>
-  <li>Go to the <a href="https://www.riteaid.com/pharmacy/covid-qualifier">Rite Aid Covid Qualifier</a> and complete the form</li>
+  <li>Go to the <a href="https://www.riteaid.com/pharmacy/covid-qualifier">Rite Aid Covid Qualifier</a> and complete the form (or use the form filler bookmarklet above)</li>
   <li>On the results page, click the bookmarklet to see the status next to each store</li>
   <li>Choose a store with availability and schedule your appointment.</li>
 </ol>
